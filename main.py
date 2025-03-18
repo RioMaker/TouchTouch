@@ -13,7 +13,7 @@ api_touch_touch = "https://uapis.cn/api/mt?qq="
 
 
 # 注册插件
-@register(name="TouchTouch", description="摸摸@的人", version="0.3", author="Rio")
+@register(name="TouchTouch", description="摸摸@的人", version="0.4", author="Rio")
 class MyPlugin(BasePlugin):
 
     # 插件加载时触发
@@ -39,6 +39,7 @@ class MyPlugin(BasePlugin):
             ])
             ctx.add_return("reply", msg_chain)
             ctx.prevent_default()
+        return
 
     # 当收到群消息时触发
     @handler(GroupNormalMessageReceived)
@@ -55,6 +56,7 @@ class MyPlugin(BasePlugin):
             ])
             ctx.add_return("reply", msg_chain)
             ctx.prevent_default()
+        return
         # if msg == "hello":  # 如果消息为hello
 
         #     # 输出调试信息
