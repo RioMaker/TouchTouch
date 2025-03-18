@@ -31,7 +31,7 @@ class MyPlugin(BasePlugin):
             ctx.event.text_message
         )  # 这里的 event 即为 PersonNormalMessageReceived 的对象
         print(msg)
-        if msg == "/摸摸":
+        if msg == "摸摸":
             # ctx.add_return("reply", ["![]({})".format(api_touch_touch+str(ctx.event.sender_id))])
             img_url = api_touch_touch+str(ctx.event.sender_id)
             msg_chain = MessageChain([
@@ -47,7 +47,7 @@ class MyPlugin(BasePlugin):
             ctx.event.text_message
         )  # 这里的 event 即为 GroupNormalMessageReceived 的对象
         print(msg)
-        if msg == "/摸摸":
+        if msg == "摸摸":
             # ctx.add_return("reply", ["![]({})".format(api_touch_touch+str(ctx.event.sender_id))])
             img_url = api_touch_touch+str(ctx.event.sender_id)
             msg_chain = MessageChain([
