@@ -13,7 +13,7 @@ api_touch_touch = "https://uapis.cn/api/mt?qq="
 
 
 # 注册插件
-@register(name="TouchTouch", description="摸摸@的人", version="0.1", author="Rio")
+@register(name="TouchTouch", description="摸摸@的人", version="0.3", author="Rio")
 class MyPlugin(BasePlugin):
 
     # 插件加载时触发
