@@ -7,6 +7,7 @@ from pkg.plugin.context import (
     EventContext,
 )
 from pkg.plugin.events import *  # 导入事件类
+from pkg.platform.types import *
 
 api_touch_touch = "https://uapis.cn/api/mt?qq="
 
@@ -31,7 +32,12 @@ class MyPlugin(BasePlugin):
         )  # 这里的 event 即为 PersonNormalMessageReceived 的对象
         print(msg)
         if msg == "摸摸":
-            ctx.add_return("reply", ["![]({})".format(api_touch_touch+str(ctx.event.sender_id))])
+            # ctx.add_return("reply", ["![]({})".format(api_touch_touch+str(ctx.event.sender_id))])
+            msg_chain = MessageChain([
+                Plain("Hello LangBot"),
+                Image(url='https://qchatgpt.rockchin.top/langbot-logo.png')
+            ])
+            ctx.add_return("reply", [msg_chain])
             ctx.prevent_default()
 
     # 当收到群消息时触发
@@ -42,7 +48,12 @@ class MyPlugin(BasePlugin):
         )  # 这里的 event 即为 GroupNormalMessageReceived 的对象
         print(msg)
         if msg == "摸摸":
-            ctx.add_return("reply", ["![]({})".format(api_touch_touch+str(ctx.event.sender_id))])
+            # ctx.add_return("reply", ["![]({})".format(api_touch_touch+str(ctx.event.sender_id))])
+            msg_chain = MessageChain([
+                Plain("Hello LangBot"),
+                Image(url='https://qchatgpt.rockchin.top/langbot-logo.png')
+            ])
+            ctx.add_return("reply", [msg_chain])
             ctx.prevent_default()
         # if msg == "hello":  # 如果消息为hello
 
